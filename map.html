@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Google Maps - Minimalizace vodoznaku</title>
+    <style>
+        #map { 
+            width: 100%; 
+            height: 100vh; /* Celá obrazovka */
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    
+    <script>
+        function initMap() {
+            // Větší zoom = vodoznak zabírá menší % obrazovky
+            const map = new google.maps.Map(document.getElementById("map"), {
+                center: { lat: 20, lng: 0 },  // střed u Afriky (vodoznak je vpravo dole)
+                zoom: 3,  // čím vyšší zoom, tím menší vodoznak relativně
+            });
+        }
+    </script>
+    
+    <!-- Načtení Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+</body>
+</html>
